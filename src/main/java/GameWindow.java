@@ -1,6 +1,4 @@
 import model.GameModel;
-import repository.GameRepository;
-import repository.sqlite.SqliteGameRepository;
 
 import javax.swing.*;
 

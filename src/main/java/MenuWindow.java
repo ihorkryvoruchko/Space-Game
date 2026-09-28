@@ -2,9 +2,8 @@ import model.GameModel;
 import model.UserModel;
 import repository.GameRepository;
 import repository.UserRepository;
-import repository.sqlite.SqliteGameRepository;
-import repository.sqlite.SqliteUserRepository;
-
+import repository.api.ApiGameRepository;
+import repository.api.ApiUserRepository;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
@@ -32,8 +31,8 @@ public class MenuWindow extends JFrame implements ActionListener {
     private boolean gameRunning, musicRunning;
     private Sequencer sequencer;
 
-    private final UserRepository userRepository = new SqliteUserRepository();
-    private final GameRepository gameRepository = new SqliteGameRepository();
+    private final UserRepository userRepository = new ApiUserRepository();
+    private final GameRepository gameRepository = new ApiGameRepository();
 
     public MenuWindow() {
         this.setTitle("MenuWindow");

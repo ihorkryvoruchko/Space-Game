@@ -1,7 +1,8 @@
+
+
 import model.GameModel;
 import repository.GameRepository;
-import repository.sqlite.SqliteGameRepository;
-
+import repository.api.ApiGameRepository;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +44,7 @@ public class GamePanel extends JPanel implements ActionListener {
     private boolean starDiscovered = false;
 
     private GameModel game;
-    private final GameRepository gameRepository = new SqliteGameRepository();
+    private final GameRepository gameRepository = new ApiGameRepository();
 
 
     public GamePanel(int w, int h, GameModel game) {

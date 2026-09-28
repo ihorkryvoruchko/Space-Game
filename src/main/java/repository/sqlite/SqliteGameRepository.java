@@ -1,11 +1,8 @@
 package repository.sqlite;
 
 import model.GameModel;
-import model.UserModel;
 import repository.GameRepository;
-
 import java.sql.*;
-
 
 public class SqliteGameRepository extends AbstractSqliteRepository implements GameRepository {
 
@@ -63,7 +60,7 @@ public class SqliteGameRepository extends AbstractSqliteRepository implements Ga
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Ошибка при обновлении game по id: " + game.getId(), e);
+            throw new RuntimeException("Fehler: " + game.getId(), e);
         }
 
         return null;
