@@ -161,7 +161,11 @@ public class MenuWindow extends JFrame implements ActionListener {
 
         synthesizer.loadAllInstruments(synthesizer.getDefaultSoundbank());
 
-        var singleSequence = MidiSystem.getSequence(new File("ImperialMarch.mid"));
+        var resourceStream = getClass().getResourceAsStream("/ImperialMarch.mid");
+        if (resourceStream == null) {
+            throw new IllegalArgumentException("Datei wurde nicht gefunden: /ImperialMarch.mid");
+        }
+        var singleSequence = MidiSystem.getSequence(resourceStream);
 
         sequencer.open();
         sequencer.setSequence(singleSequence);

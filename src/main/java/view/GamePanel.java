@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.MemoryImageSource;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
@@ -61,7 +62,9 @@ public class GamePanel extends JPanel implements ActionListener {
 
         try {
             this.batman = this.loadImage();
-            this.spaceShip = ImageIO.read(new File("demo.png"));
+
+            this.spaceShip = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/demo.png")));
+
             this.timer.start();
             this.fly();
 
