@@ -1,4 +1,4 @@
-
+package view;
 
 import model.GameModel;
 import repository.GameRepository;

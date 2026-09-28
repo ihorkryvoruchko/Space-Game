@@ -1,3 +1,5 @@
+package view;
+
 import model.GameModel;
 import model.UserModel;
 import repository.GameRepository;
@@ -35,7 +37,7 @@ public class MenuWindow extends JFrame implements ActionListener {
     private final GameRepository gameRepository = new ApiGameRepository();
 
     public MenuWindow() {
-        this.setTitle("MenuWindow");
+        this.setTitle("view.MenuWindow");
         this.setResizable(false);
         this.setLocation(800, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
